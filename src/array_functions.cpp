@@ -11,6 +11,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include "array_functions.h"
+
 
 
 //============================================================================
@@ -35,8 +37,9 @@ struct entry {
 //TODO add variable to keep track of next available slot in array
 
 //TODO define all functions in header file
-void clearArray(myArray) {
-Array.Clear(myArray, 0, myArray.Length);
+void clearArray() {
+	std::fill_n(array, elementCount, 0);
+//Array.Clear(myArray, 0, myArray.Length);
 }
 int getArraySize();
 std::string getArrayWordAt(int i);

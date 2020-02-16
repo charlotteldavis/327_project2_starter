@@ -4,8 +4,8 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-
 #include "constants.h"
+
 /*============================================================================
  * The following are declarations for functions that I will test
  * Please provide the definitions in the
