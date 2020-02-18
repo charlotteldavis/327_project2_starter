@@ -21,29 +21,37 @@
 //	stuff you will need
 //============================================================================
 //TODO define a structure to track words and number of times they occur
-void extractTokensFromLine(std::string &myString) {
-	stringstream ss(myString);
-	string tempToken;
 
-while (getline(ss, tempToken, CHAR_TO_SEARCH_FOR)) {
-	processToken(tempToken);
-	}
-}
-//TODO add a global array of entry structs (global to this file)
 struct entry {
 	string word;
 	int number_occurences;
 };
-//TODO add variable to keep track of next available slot in array
 
+//TODO add a global array of entry structs (global to this file)
+entry myArray[MAX_WORDS];
+
+//TODO add variable to keep track of next available slot in array
+int count = 0;
 //TODO define all functions in header file
 void clearArray() {
-	std::fill_n(array, elementCount, 0);
-//Array.Clear(myArray, 0, myArray.Length);
+for (int i = 0; i < myArray.length; ++i) {
+	myArray[i].word = "";
+	myArray.number_occurences = 0;
+	count = 0;
 }
-int getArraySize();
-std::string getArrayWordAt(int i);
-int getArrayWord_NumbOccur_At(int i);
+}
+int getArraySize(){
+return count;
+}
+
+std::string getArrayWordAt(int i) {
+return myArray[i].word;
+}
+
+int getArrayWord_NumbOccur_At(int i) {
+return myArray[i].number_occurences;
+}
+
 bool processFile(std::fstream &myfstream);
 void processLine(std::string &myString);
 void processToken(std::string &token);
